@@ -1,0 +1,149 @@
+.experience {
+  background: white;
+  padding: 100px 0;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 50px;
+  padding-left: 80px;
+}
+
+.timelineMarker {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+.timelineContent {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.timelineContent:hover {
+  transform: translateY(-5px);
+}
+
+.timelineHeader {
+  margin-bottom: 20px;
+}
+
+.timelineHeader h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #6366f1;
+  margin-bottom: 5px;
+}
+
+.company {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #374151;
+  margin-right: 15px;
+}
+
+.period {
+  font-size: 0.9rem;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 4px 12px;
+  border-radius: 15px;
+}
+
+.timelineDescription {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.timelineDetails h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #374151;
+}
+
+.timelineDetails ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.timelineDetails li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: #6b7280;
+}
+
+.timelineDetails li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #6366f1;
+  font-weight: bold;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.techTag {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 15px;
+  }
+  .timelineItem {
+    padding-left: 50px;
+  }
+  .timelineMarker {
+    left: 5px;
+  }
+} 
