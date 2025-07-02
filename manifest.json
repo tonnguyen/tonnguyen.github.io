@@ -1,0 +1,21 @@
+{
+  "name": "Ton Nguyen - Team Leader & Developer",
+  "short_name": "Ton Nguyen CV",
+  "description": "Experienced Team Leader at Litium with expertise in e-commerce platforms, .NET development, React, Angular, and mobile development.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+} 
