@@ -8,15 +8,18 @@
     "build:static": "NODE_ENV=production next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "NODE_ENV=production next build && touch ./out/.nojekyll",
+    "export": "NODE_ENV=production BUILD_EXPORT=true next build && touch ./out/.nojekyll",
     "deploy": "gh-pages -d out --nojekyll --repo https://github.com/tonnguyen/tonnguyen.github.io.git"
   },
   "dependencies": {
+    "@react-three/drei": "^10.4.2",
+    "@react-three/fiber": "^9.2.0",
     "critters": "^0.0.25",
     "next": "^15.3.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
-    "sharp": "^0.34.2"
+    "sharp": "^0.34.2",
+    "three": "^0.178.0"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"

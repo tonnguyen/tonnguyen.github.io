@@ -3,6 +3,10 @@
   padding: 100px 0;
 }
 
+[data-theme="dark"] .about {
+  background: var(--bg);
+}
+
 .sectionTitle {
   text-align: center;
   font-size: 2.5rem;
@@ -34,6 +38,12 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex: 1 1 320px;
   min-width: 280px;
+}
+
+[data-theme="dark"] .aboutCard {
+  background: #1f2937;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .aboutCard:hover {
@@ -68,6 +78,10 @@
   border-bottom: 1px solid #e5e7eb;
 }
 
+[data-theme="dark"] .educationItem {
+  border-bottom: 1px solid #374151;
+}
+
 .educationItem:last-child {
   border-bottom: none;
   margin-bottom: 0;
@@ -98,9 +112,17 @@
   color: #333;
 }
 
+[data-theme="dark"] .educationDetails h4 {
+  color: #e5e7eb;
+}
+
 .educationDetails p {
   color: #6b7280;
   font-size: 1rem;
+}
+
+[data-theme="dark"] .educationDetails p {
+  color: #9ca3af;
 }
 
 .aboutContentColumn {

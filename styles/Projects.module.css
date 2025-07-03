@@ -3,6 +3,10 @@
   padding: 100px 0;
 }
 
+[data-theme="dark"] .projects {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+}
+
 .sectionTitle {
   text-align: center;
   font-size: 2.5rem;
@@ -29,6 +33,12 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+[data-theme="dark"] .projectCard {
+  background: #1f2937;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .projectCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -45,6 +55,10 @@
   margin-bottom: 8px;
 }
 
+[data-theme="dark"] .projectHeader h3 {
+  color: #e5e7eb !important;
+}
+
 .projectRole {
   background: linear-gradient(135deg, #fbbf24, #f59e0b);
   color: white;
@@ -58,6 +72,10 @@
   color: #6b7280;
   line-height: 1.6;
   margin-bottom: 20px;
+}
+
+[data-theme="dark"] .projectDescription {
+  color: #9ca3af;
 }
 
 .projectTech {

@@ -1,6 +1,7 @@
 "use client";
 import styles from '../styles/Navbar.module.css';
 import { useState, useEffect } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -53,10 +54,15 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <div className={`${styles.hamburger} ${open ? styles.active : ''}`} onClick={() => setOpen(!open)}>
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
+        <div className={styles.navRight}>
+          <div className={styles.themeToggleContainer}>
+            <ThemeToggle />
+          </div>
+          <div className={`${styles.hamburger} ${open ? styles.active : ''}`} onClick={() => setOpen(!open)}>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+          </div>
         </div>
       </div>
     </nav>

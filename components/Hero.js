@@ -1,5 +1,22 @@
+'use client';
+
 import styles from '../styles/Hero.module.css';
-import Image from 'next/image';
+import dynamic from 'next/dynamic';
+import LoadingSpinner from './LoadingSpinner';
+
+// Dynamically import the desk scene to avoid SSR issues
+const DeskScene = dynamic(() => import('./DeskScene'), {
+  ssr: false,
+  loading: () => (
+    <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'transparent' }}>
+      <img
+        src="/Ton.webp"
+        alt="Ton Nguyen profile"
+        style={{ maxWidth: '60%', maxHeight: '60%', borderRadius: '50%', boxShadow: '0 4px 32px rgba(0,0,0,0.15)' }}
+      />
+    </div>
+  )
+});
 
 export default function Hero() {
   return (
@@ -19,16 +36,8 @@ export default function Hero() {
             </div>
           </div>
           <div className={styles.heroImage}>
-            <div className={styles.profileContainer}>
-              <Image 
-                src="/Ton.webp" 
-                alt="Ton Nguyen - Team Leader and Developer" 
-                width={200} 
-                height={200} 
-                className={styles.profileImage}
-                priority
-              />
-              <div className={styles.profileBorder}></div>
+            <div className={styles.sceneContainer}>
+              <DeskScene />
             </div>
           </div>
         </div>

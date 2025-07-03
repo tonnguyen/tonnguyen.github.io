@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import { ThemeProvider } from '../components/ThemeProvider';
 
 export const metadata = {
   title: 'Ton Nguyen - Team Leader & Developer | Stockholm, Sweden',
@@ -167,7 +168,11 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 } 

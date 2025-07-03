@@ -2,7 +2,7 @@
 const nextConfig = {
   // Static export for GitHub Pages (only in production)
   ...(process.env.NODE_ENV === 'production' && {
-    output: 'export',
+    output: process.env.BUILD_EXPORT ? 'export' : undefined,
     trailingSlash: true,
     basePath: '',
     assetPrefix: '.',

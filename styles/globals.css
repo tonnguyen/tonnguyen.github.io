@@ -5,6 +5,28 @@
   --bg: #fff;
   --card-shadow: 0 2px 8px rgba(0,0,0,0.06);
   --border-radius: 12px;
+  
+  /* Theme toggle variables */
+  --toggle-bg: #e1e5e9;
+  --toggle-slider: #ffffff;
+  --sun-color: #f59e0b;
+  --moon-color: #6b7280;
+  --hover-bg: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+  --accent: #60a5fa;
+  --accent-hover: #3b82f6;
+  --text: #e5e7eb;
+  --bg: #111827;
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  
+  /* Dark theme toggle variables */
+  --toggle-bg-dark: #374151;
+  --toggle-slider-dark: #ffffff;
+  --sun-color-dark: #fbbf24;
+  --moon-color-dark: #a78bfa;
+  --hover-bg: rgba(255, 255, 255, 0.1);
 }
 
 html {

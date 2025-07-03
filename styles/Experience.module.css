@@ -4,6 +4,10 @@
   margin-top: 0;
 }
 
+[data-theme="dark"] .experience {
+  background: var(--bg);
+}
+
 .container {
   padding-top: 0;
   margin-top: 0;
@@ -77,6 +81,12 @@
   justify-content: center;
 }
 
+[data-theme="dark"] .timelineMarker {
+  background: #1f2937;
+  border: 4px solid #1f2937;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.3);
+}
+
 .companyLogo {
   width: 100%;
   height: 100%;
@@ -109,6 +119,13 @@
   transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
 }
 
+[data-theme="dark"] .markerPeriod {
+  background: #1f2937;
+  color: #60a5fa;
+  border: 1px solid #374151;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 .markerPeriod.revealed {
   opacity: 1;
   transform: translateX(0);
@@ -125,6 +142,12 @@
   opacity: 0;
   transform: translateX(80px);
   transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+[data-theme="dark"] .timelineContent {
+  background: #1f2937;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .timelineContent.revealed {
@@ -154,12 +177,21 @@
   margin-right: 15px;
 }
 
+[data-theme="dark"] .company {
+  color: #e5e7eb;
+}
+
 .period {
   font-size: 0.9rem;
   color: #6b7280;
   background: #f3f4f6;
   padding: 4px 12px;
   border-radius: 15px;
+}
+
+[data-theme="dark"] .period {
+  color: #9ca3af;
+  background: #374151;
 }
 
 .timelineDescription {
@@ -169,11 +201,19 @@
   line-height: 1.6;
 }
 
+[data-theme="dark"] .timelineDescription {
+  color: #9ca3af;
+}
+
 .timelineDetails h4 {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 15px;
   color: #374151;
+}
+
+[data-theme="dark"] .timelineDetails h4 {
+  color: #e5e7eb;
 }
 
 .timelineDetails ul {
@@ -186,6 +226,10 @@
   padding-left: 20px;
   margin-bottom: 8px;
   color: #6b7280;
+}
+
+[data-theme="dark"] .timelineDetails li {
+  color: #9ca3af;
 }
 
 .timelineDetails li::before {
