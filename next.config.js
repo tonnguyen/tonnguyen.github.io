@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Static export for GitHub Pages
-  output: 'export',
-  trailingSlash: true,
-  basePath: '',
-  assetPrefix: '.',
+  // Static export for GitHub Pages (only in production)
+  ...(process.env.NODE_ENV === 'production' && {
+    output: 'export',
+    trailingSlash: true,
+    basePath: '',
+    assetPrefix: '.',
+  }),
   
   // Enable image optimization
   images: {
@@ -12,7 +14,7 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
-    unoptimized: true, // Required for static export
+    unoptimized: process.env.NODE_ENV === 'production', // Required for static export
   },
   
   // Enable compression
@@ -22,8 +24,6 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
   },
-  
-
   
   // Webpack optimization
   webpack: (config, { dev, isServer }) => {
