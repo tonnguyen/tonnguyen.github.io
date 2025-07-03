@@ -15,7 +15,8 @@
     "critters": "^0.0.25",
     "next": "^15.3.0",
     "react": "^18.3.0",
-    "react-dom": "^18.3.0"
+    "react-dom": "^18.3.0",
+    "sharp": "^0.34.2"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"

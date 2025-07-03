@@ -1,13 +1,19 @@
 .experience {
   background: white;
-  padding: 100px 0;
+  padding: 0 0 100px 0;
+  margin-top: 0;
+}
+
+.container {
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .sectionTitle {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 60px;
+  margin-bottom: 24px;
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -23,38 +29,107 @@
 .timeline::before {
   content: '';
   position: absolute;
-  left: 30px;
+  left: 40px;
   top: 0;
   bottom: 0;
   width: 2px;
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  z-index: 1;
 }
 
 .timelineItem {
   position: relative;
   margin-bottom: 50px;
-  padding-left: 80px;
+  margin-left: 80px;
+}
+
+.timelineRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  z-index: 2;
+  padding-left: 0;
+}
+
+.timelineItem:first-child .timelineRow {
+  margin-top: 0;
+}
+
+.timelineItem:first-child .timelineMarker {
+  top: calc(50% + 2px);
 }
 
 .timelineMarker {
   position: absolute;
-  left: 20px;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  left: -58px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: white;
   border-radius: 50%;
   border: 4px solid white;
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.companyLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.rocketIcon {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.markerPeriod {
+  margin-left: 1px;
+  background: white;
+  color: #6366f1;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+.markerPeriod.revealed {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .timelineContent {
   background: white;
-  padding: 30px;
+  padding: 30px 30px 30px 30px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
+  padding-left: 30px;
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+.timelineContent.revealed {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .timelineContent:hover {
@@ -136,14 +211,52 @@
   font-weight: 500;
 }
 
+.timelineItem:first-child .timelineMarker {
+  top: calc(50% - 5px);
+}
+
+.timelineItem:first-child .markerPeriod {
+  margin-top: -5px;
+}
+
 @media (max-width: 768px) {
   .timeline::before {
-    left: 15px;
+    left: 20px;
   }
   .timelineItem {
-    padding-left: 50px;
+    margin-left: 0;
+  }
+  .timelineRow {
+    padding-left: 0;
+    margin-bottom: 16px;
   }
   .timelineMarker {
-    left: 5px;
+    width: 32px;
+    height: 32px;
+    left: 20px;
+    top: 50%;
+    background: white;
+    transform: translate(-50%, -50%);
+  }
+  .markerPeriod {
+    margin-left: 50px;
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+  .timelineContent {
+    padding: 24px 12px 24px 16px;
+    padding-left: 16px;
+    margin-left: 50px;
+  }
+  .timelineItem:first-child .timelineMarker {
+    top: calc(50% + 1px);
+  }
+  .companyLogo {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+  .rocketIcon {
+    font-size: 1.6rem;
   }
 } 
