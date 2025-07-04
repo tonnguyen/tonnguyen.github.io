@@ -12,7 +12,6 @@ function ThreeScene({ children }) {
 
   useEffect(() => {
     const handleContextLost = (event) => {
-      console.log('WebGL context lost, recreating scene...');
       event.preventDefault();
       setContextLost(true);
       
@@ -42,7 +41,7 @@ function ThreeScene({ children }) {
   return (
     <Canvas
       key={key}
-      camera={{ position: [1.6, 1.3, 2.1], fov: 60 }}
+      camera={{ position: [1.6, 1.3, 2.8], fov: 60 }}
       style={{ background: 'transparent' }} // Ensures canvas is transparent
       gl={{ 
         antialias: true,

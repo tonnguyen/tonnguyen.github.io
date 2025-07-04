@@ -2,7 +2,7 @@
 
 import styles from '../styles/Hero.module.css';
 import dynamic from 'next/dynamic';
-import LoadingSpinner from './LoadingSpinner';
+import { useState } from 'react';
 
 // Dynamically import the desk scene to avoid SSR issues
 const DeskScene = dynamic(() => import('./DeskScene'), {
@@ -10,7 +10,7 @@ const DeskScene = dynamic(() => import('./DeskScene'), {
   loading: () => (
     <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'transparent' }}>
       <img
-        src="/Ton.webp"
+        src="/profile-avatar.jpg"
         alt="Ton Nguyen profile"
         style={{ maxWidth: '60%', maxHeight: '60%', borderRadius: '50%', boxShadow: '0 4px 32px rgba(0,0,0,0.15)' }}
       />
@@ -19,6 +19,7 @@ const DeskScene = dynamic(() => import('./DeskScene'), {
 });
 
 export default function Hero() {
+  const [isCanvasHovered, setIsCanvasHovered] = useState(false);
   return (
     <section className={styles.hero} id="home" aria-label="Introduction">
       <div className={styles.heroContainer}>
@@ -36,8 +37,12 @@ export default function Hero() {
             </div>
           </div>
           <div className={styles.heroImage}>
-            <div className={styles.sceneContainer}>
-              <DeskScene />
+            <div
+              className={styles.sceneContainer}
+              onMouseEnter={() => setIsCanvasHovered(true)}
+              onMouseLeave={() => setIsCanvasHovered(false)}
+            >
+              <DeskScene isHovered={isCanvasHovered} />
             </div>
           </div>
         </div>

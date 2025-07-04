@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: radial-gradient(circle at 50% 50%, #3498db 0%, #2062a6 100%);
   position: relative;
   overflow: hidden;
 }

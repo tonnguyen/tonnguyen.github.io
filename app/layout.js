@@ -24,7 +24,7 @@ export const metadata = {
     siteName: 'Ton Nguyen - CV',
     images: [
       {
-        url: '/Ton.webp',
+        url: '/profile-avatar.jpg',
         width: 200,
         height: 200,
         alt: 'Ton Nguyen - Team Leader & Developer',
@@ -37,7 +37,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Ton Nguyen - Team Leader & Developer',
     description: 'Experienced Team Leader at Litium with expertise in e-commerce platforms, .NET development, React, Angular, and mobile development.',
-    images: ['/Ton.webp'],
+    images: ['/profile-avatar.jpg'],
     creator: '@tonnguyen', // Replace with your actual Twitter handle
   },
   robots: {
@@ -84,7 +84,7 @@ export default function RootLayout({ children }) {
       "Team Leadership"
     ],
     "url": "https://tonnguyen.github.io",
-    "image": "https://tonnguyen.github.io/Ton.webp",
+    "image": "https://tonnguyen.github.io/profile-avatar.jpg",
     "sameAs": [
       "https://www.linkedin.com/in/tonnguyen/",
       "https://github.com/tonnguyen",
@@ -97,12 +97,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.jpg" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         
         {/* Preload critical resources */}
-        <link rel="preload" href="/Ton.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/profile-avatar.jpg" as="image" type="image/jpeg" />
         
         {/* Optimized font loading */}
         <link 
@@ -138,35 +138,7 @@ export default function RootLayout({ children }) {
         />
         
         {/* Performance monitoring */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Performance monitoring
-              if ('performance' in window) {
-                window.addEventListener('load', function() {
-                  setTimeout(function() {
-                    const perfData = performance.getEntriesByType('navigation')[0];
-                    const paintData = performance.getEntriesByType('paint');
-                    
-                    // Log Core Web Vitals
-                    if (perfData) {
-                      console.log('Performance Metrics:', {
-                        'DOM Content Loaded': perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart + 'ms',
-                        'Load Complete': perfData.loadEventEnd - perfData.loadEventStart + 'ms',
-                        'Total Load Time': perfData.loadEventEnd - perfData.fetchStart + 'ms'
-                      });
-                    }
-                    
-                    // Log paint times
-                    paintData.forEach(paint => {
-                      console.log(paint.name + ':', paint.startTime + 'ms');
-                    });
-                  }, 0);
-                });
-              }
-            `,
-          }}
-        />
+
       </head>
       <body>
         <ThemeProvider>
