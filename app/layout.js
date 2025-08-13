@@ -144,6 +144,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           {children}
         </ThemeProvider>
+        <script src="https://www.botcan.chat/widget.js" data-site-id="1e1baf0e-a8ff-48e6-ba7d-d99a42d807fe" defer></script>
       </body>
     </html>
   );
