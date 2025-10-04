@@ -1,16 +1,13 @@
-import { headers } from 'next/headers';
+export const dynamic = 'force-static'
+
+// Base URL for your site - update this with your actual domain
+const BASE_URL = 'https://tonnguyen.github.io';
 
 export async function GET() {
-  const headersList = headers();
-  const domain = headersList.get('host');
-  const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
-  
-  const baseUrl = `${protocol}://${domain}`;
-  
   // Define your site's URLs
   const urls = [
     {
-      loc: baseUrl,
+      loc: BASE_URL,
       lastmod: new Date().toISOString(),
       changefreq: 'weekly',
       priority: 1.0

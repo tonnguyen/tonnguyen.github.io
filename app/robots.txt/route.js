@@ -1,3 +1,5 @@
+export const dynamic = 'force-static'
+
 export async function GET() {
   const robotsTxt = `# Allow all crawlers
 User-agent: *
