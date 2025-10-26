@@ -1,0 +1,435 @@
+/* Terminal Component Styles */
+.terminal {
+  max-width: 80rem;
+  margin: 0 auto;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminalHeader {
+  background-color: #2d2d2d;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid #3d3d3d;
+  flex-shrink: 0;
+}
+
+.terminalButton {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+}
+
+.terminalButtonRed {
+  fill: #ff5f56;
+  stroke: #ff5f56;
+}
+
+.terminalButtonYellow {
+  fill: #ffbd2e;
+  stroke: #ffbd2e;
+}
+
+.terminalButtonGreen {
+  fill: #27c93f;
+  stroke: #27c93f;
+}
+
+.terminalTitle {
+  margin-left: 1rem;
+  color: #a0a0a0;
+  font-size: 0.875rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.terminalBody {
+  background-color: #1e1e1e;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 1.5rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.875rem;
+  cursor: text;
+  overflow-y: auto;
+  flex: 1;
+  /* Firefox scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: #4a4a4a #2d2d2d;
+}
+
+/* Custom scrollbar styling to match terminal theme */
+.terminalBody::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminalBody::-webkit-scrollbar-track {
+  background: #2d2d2d;
+  border-radius: 4px;
+}
+
+.terminalBody::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+  border: 1px solid #2d2d2d;
+}
+
+.terminalBody::-webkit-scrollbar-thumb:hover {
+  background: #5a5a5a;
+}
+
+.terminalBody::-webkit-scrollbar-corner {
+  background: #2d2d2d;
+}
+
+.welcomeMessage {
+  margin-bottom: 1.5rem;
+}
+
+.welcomeTitle {
+  color: #4a9eff;
+  margin-bottom: 0.5rem;
+}
+
+.welcomeSubtitle {
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.commandHistory {
+  margin-bottom: 1rem;
+}
+
+.commandPrompt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.promptIcon {
+  width: 1rem;
+  height: 1rem;
+  color: #4a9eff;
+  flex-shrink: 0;
+}
+
+.promptUser {
+  color: #4a9eff;
+}
+
+.promptSeparator {
+  color: #888;
+}
+
+.promptPath {
+  color: #27c93f;
+}
+
+.promptSymbol {
+  color: #888;
+}
+
+.commandText {
+  color: #e0e0e0;
+}
+
+.commandForm {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.commandInput {
+  flex: 1;
+  background: transparent;
+  outline: none;
+  color: #e0e0e0;
+  caret-color: #e0e0e0;
+  margin-left: 0.5rem;
+}
+
+.helpOutput {
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.helpTitle {
+  color: #4a9eff;
+  margin-bottom: 0.75rem;
+}
+
+.helpCommands {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.helpCommand {
+  display: flex;
+  gap: 1rem;
+}
+
+.helpCommandName {
+  color: #27c93f;
+  min-width: 10rem;
+}
+
+.helpCommandDescription {
+  color: #888;
+}
+
+.errorMessage {
+  color: #ff5f56;
+  padding-left: 0.5rem;
+}
+
+.errorHint {
+  color: #888;
+  margin-top: 0.25rem;
+}
+
+/* Command Output Styles */
+.commandOutput {
+  padding-left: 0.5rem;
+}
+
+.outputText {
+  color: #e0e0e0;
+}
+
+.outputLabel {
+  color: #4a9eff;
+}
+
+.outputValue {
+  color: #e0e0e0;
+}
+
+.outputSecondary {
+  color: #888;
+}
+
+.outputMuted {
+  color: #666;
+}
+
+.outputSuccess {
+  color: #27c93f;
+}
+
+/* Project List Styles */
+.projectList {
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.projectItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.projectIcon {
+  width: 1rem;
+  height: 1rem;
+  color: #4a9eff;
+}
+
+.projectName {
+  color: #27c93f;
+}
+
+.projectLink {
+  margin-left: auto;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.projectItem:hover .projectLink {
+  opacity: 1;
+}
+
+.projectLinkIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: #888;
+}
+
+.projectLinkIcon:hover {
+  color: #4a9eff;
+}
+
+.projectDescription {
+  padding-left: 1.5rem;
+  color: #888;
+  font-size: 0.875rem;
+}
+
+.projectTech {
+  padding-left: 1.5rem;
+  color: #666;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Skills Styles */
+.skillsList {
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skillCategory {
+  display: flex;
+  flex-direction: column;
+}
+
+.skillCategoryTitle {
+  color: #4a9eff;
+  margin-bottom: 0.25rem;
+}
+
+.skillItems {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skillCheckmark {
+  color: #27c93f;
+}
+
+.skillName {
+  color: #e0e0e0;
+}
+
+.skillLevel {
+  color: #666;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+/* Experience Styles */
+.experienceList {
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.experienceItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.experienceHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.experienceIcon {
+  width: 1rem;
+  height: 1rem;
+  color: #4a9eff;
+}
+
+.experienceCompany {
+  color: #27c93f;
+}
+
+.experienceRole {
+  color: #888;
+  margin-left: 0.5rem;
+}
+
+.experienceDetails {
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.experiencePeriod {
+  color: #888;
+  font-size: 0.875rem;
+}
+
+.experienceResponsibilities {
+  color: #e0e0e0;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.experienceResponsibility {
+  margin-bottom: 0.25rem;
+}
+
+.experienceTech {
+  color: #666;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* Contact Styles */
+.contactOutput {
+  padding-left: 0.5rem;
+}
+
+.contactJson {
+  color: #e0e0e0;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.jsonBrace {
+  color: #888;
+}
+
+.jsonKey {
+  color: #4a9eff;
+}
+
+.jsonString {
+  color: #27c93f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .terminal {
+    height: 60vh;
+    margin: 0 1rem;
+  }
+  
+  .terminalBody {
+    padding: 1rem;
+  }
+  
+  .helpCommand {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .helpCommandName {
+    min-width: auto;
+  }
+}
