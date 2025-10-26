@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { ChevronRight, Circle } from 'lucide-react';
 import { CommandOutput } from './CommandOutput';
+import { ThemeToggle } from './ThemeToggle';
 import styles from '../styles/Terminal.module.css';
 
 const availableCommands = [
@@ -154,10 +155,16 @@ export default function Terminal() {
     <div className={styles.terminal}>
       {/* Terminal Header */}
       <div className={styles.terminalHeader}>
-        <Circle className={`${styles.terminalButton} ${styles.terminalButtonRed}`} />
-        <Circle className={`${styles.terminalButton} ${styles.terminalButtonYellow}`} />
-        <Circle className={`${styles.terminalButton} ${styles.terminalButtonGreen}`} />
+        <div className={styles.terminalButtons}>
+          <Circle className={`${styles.terminalButton} ${styles.terminalButtonRed}`} />
+          <Circle className={`${styles.terminalButton} ${styles.terminalButtonYellow}`} />
+          <Circle className={`${styles.terminalButton} ${styles.terminalButtonGreen}`} />
+        </div>
         <span className={styles.terminalTitle}>anonymous@earth ~ %</span>
+        <div className={styles.terminalSpacer}></div>
+        <div className={styles.terminalControls}>
+          <ThemeToggle />
+        </div>
       </div>
 
       {/* Terminal Body */}

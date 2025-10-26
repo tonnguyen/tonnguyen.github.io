@@ -18,6 +18,21 @@
   flex-shrink: 0;
 }
 
+.terminalButtons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.terminalControls {
+  display: flex;
+  align-items: center;
+}
+
+.terminalSpacer {
+  flex: 1;
+}
+
 .terminalButton {
   width: 0.75rem;
   height: 0.75rem;

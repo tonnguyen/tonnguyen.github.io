@@ -1,5 +1,5 @@
 'use client';
-import { Sun, Moon } from 'lucide-react';
+import { Lightbulb } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export function ThemeToggle() {
@@ -13,9 +13,8 @@ export function ThemeToggle() {
     if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
       setTheme(savedTheme);
     } else {
-      // Check system preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDark ? 'dark' : 'light');
+      // Default to light theme
+      setTheme('light');
     }
   }, []);
 
@@ -44,10 +43,10 @@ export function ThemeToggle() {
   if (!mounted) {
     return (
       <button
-        className="fixed top-4 right-4 p-3 rounded-full bg-gray-200 text-gray-800 shadow-lg z-50"
+        className="p-1 rounded hover:bg-gray-700 transition-colors"
         aria-label="Toggle theme"
       >
-        <Sun className="w-5 h-5" />
+        <Lightbulb className="w-4 h-4 text-gray-400" />
       </button>
     );
   }
@@ -55,14 +54,16 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-4 right-4 p-3 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-200 shadow-lg z-50"
+      className="p-1 rounded hover:bg-gray-700 transition-colors focus:outline-none"
       aria-label="Toggle theme"
     >
-      {theme === 'light' ? (
-        <Moon className="w-5 h-5" />
-      ) : (
-        <Sun className="w-5 h-5" />
-      )}
+      <Lightbulb 
+        className={`w-4 h-4 transition-colors ${
+          theme === 'light' 
+            ? 'text-yellow-400 fill-yellow-400' 
+            : 'text-gray-400 fill-gray-400'
+        }`} 
+      />
     </button>
   );
 }
