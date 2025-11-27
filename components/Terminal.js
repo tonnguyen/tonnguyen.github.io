@@ -1,6 +1,6 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
-import { ChevronRight, Circle } from 'lucide-react';
+import { ChevronRight, Circle, Search } from 'lucide-react';
 import { CommandOutput } from './CommandOutput';
 import { ThemeToggle } from './ThemeToggle';
 import styles from '../styles/Terminal.module.css';
@@ -163,6 +163,7 @@ export default function Terminal() {
         <span className={styles.terminalTitle}>anonymous@earth ~ %</span>
         <div className={styles.terminalSpacer}></div>
         <div className={styles.terminalControls}>
+          <span id="bubblav-search" suppressHydrationWarning={true}></span>
           <ThemeToggle />
         </div>
       </div>
