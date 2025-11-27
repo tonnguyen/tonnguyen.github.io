@@ -21,8 +21,13 @@ export default function Terminal() {
   const [history, setHistory] = useState([]);
   const [currentCommand, setCurrentCommand] = useState('');
   const [commandHistoryIndex, setCommandHistoryIndex] = useState(-1);
+  const [isMounted, setIsMounted] = useState(false);
   const inputRef = useRef(null);
   const terminalEndRef = useRef(null);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -163,7 +168,7 @@ export default function Terminal() {
         <span className={styles.terminalTitle}>anonymous@earth ~ %</span>
         <div className={styles.terminalSpacer}></div>
         <div className={styles.terminalControls}>
-          <span id="bubblav-search" suppressHydrationWarning={true}></span>
+          {isMounted && <span id="bubblav-search" className="!pr-2"></span>}
           <ThemeToggle />
         </div>
       </div>
