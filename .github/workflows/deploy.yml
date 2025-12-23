@@ -32,6 +32,8 @@ jobs:
         POLAR_API_BASE: ${{ secrets.POLAR_API_BASE }}
         # Public environment variables (needed at build time for static export)
         NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+        # API URL pointing to Vercel (for hybrid deployment)
+        NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
         NEXT_PUBLIC_POLAR_PRODUCT_AURORA: ${{ secrets.NEXT_PUBLIC_POLAR_PRODUCT_AURORA }}
         NEXT_PUBLIC_POLAR_PRODUCT_MIDNIGHT: ${{ secrets.NEXT_PUBLIC_POLAR_PRODUCT_MIDNIGHT }}
         NEXT_PUBLIC_POLAR_PRODUCT_EMBER: ${{ secrets.NEXT_PUBLIC_POLAR_PRODUCT_EMBER }}

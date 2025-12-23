@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from '../styles/Terminal.module.css';
+import { getApiUrl } from '../lib/api';
 
 const checkoutStatusesDone = ['completed', 'paid', 'succeeded', 'fulfilled'];
 
@@ -196,7 +197,7 @@ export function BuySkateboard({ index }) {
     });
 
     try {
-      const response = await fetch('/api/polar/checkout', {
+      const response = await fetch(getApiUrl('/api/polar/checkout'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -254,7 +255,7 @@ export function BuySkateboard({ index }) {
     }
 
     try {
-      const response = await fetch(`/api/polar/checkout/status?id=${targetId}`);
+      const response = await fetch(getApiUrl(`/api/polar/checkout/status?id=${targetId}`));
       const data = await response.json();
 
       if (!response.ok) {

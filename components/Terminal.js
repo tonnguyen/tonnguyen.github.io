@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import { ChevronRight, Circle, Search } from 'lucide-react';
 import { CommandOutput } from './CommandOutput';
 import { ThemeToggle } from './ThemeToggle';
+import { getApiUrl } from '../lib/api';
 import styles from '../styles/Terminal.module.css';
 
 const availableCommands = [
@@ -109,7 +110,7 @@ export default function Terminal() {
       // Try to get checkout details - use checkout_id if available
       if (checkoutId) {
         console.log('Fetching checkout details using checkout_id:', checkoutId);
-        response = await fetch(`/api/polar/checkout/status?id=${checkoutId}`);
+        response = await fetch(getApiUrl(`/api/polar/checkout/status?id=${checkoutId}`));
         data = await response.json();
       } else {
         // No checkout_id available - show basic success message
