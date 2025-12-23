@@ -1,7 +1,9 @@
+'use client';
 import { ExternalLink, Folder, Briefcase } from 'lucide-react';
+import { SkateboardsList, BuySkateboard } from './SkateboardsList';
 import styles from '../styles/Terminal.module.css';
 
-export function CommandOutput({ type }) {
+export function CommandOutput({ type, index }) {
   switch (type) {
     case 'whoami':
       return <WhoAmIOutput />;
@@ -13,6 +15,10 @@ export function CommandOutput({ type }) {
       return <ContactOutput />;
     case 'experience':
       return <ExperienceOutput />;
+    case 'skateboards':
+      return <SkateboardsList />;
+    case 'buy':
+      return <BuySkateboard index={index} />;
     default:
       return null;
   }

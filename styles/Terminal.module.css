@@ -428,6 +428,254 @@
   color: #27c93f;
 }
 
+.storeContainer {
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.storeHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.storeTitle {
+  color: #4a9eff;
+  font-weight: 600;
+}
+
+.storeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.storeCard {
+  background: #121212;
+  border: 1px solid #2d2d2d;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.storeCardSubscription {
+  border-color: #4a9eff;
+  background: #0a1520;
+}
+
+.storeName {
+  color: #27c93f;
+  font-weight: 600;
+}
+
+.storeDescription {
+  color: #888;
+  font-size: 0.875rem;
+}
+
+.storePrice {
+  color: #4a9eff;
+}
+
+.subscriptionBadge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #4a9eff;
+  color: #0a0a0a;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.storePriceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.storeOriginalPrice {
+  color: #666;
+  text-decoration: line-through;
+  font-size: 0.875rem;
+}
+
+.storeDiscount {
+  color: #27c93f;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.storeSubscriptionNote {
+  color: #888;
+  font-size: 0.8125rem;
+  font-style: italic;
+  padding: 0.25rem 0;
+}
+
+/* Skateboard List Styles */
+.skateboardList {
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skateboardListItem {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.skateboardIndex {
+  color: #4a9eff;
+  font-weight: 600;
+  min-width: 1.5rem;
+}
+
+.skateboardListContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.skateboardListName {
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+.skateboardSubscriptionTag {
+  color: #4a9eff;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.skateboardListPrice {
+  color: #27c93f;
+  font-weight: 600;
+}
+
+.skateboardListOriginalPrice {
+  color: #666;
+  font-size: 0.875rem;
+  text-decoration: line-through;
+}
+
+.buyOutput {
+  padding-left: 0.5rem;
+}
+
+.statusHistory {
+  padding-left: 0.5rem;
+}
+
+/* Checkout Success Styles */
+.checkoutSuccess {
+  padding-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.checkoutDetail {
+  margin-bottom: 0.5rem;
+  color: #e0e0e0;
+}
+
+.storeMeta {
+  color: #888;
+  font-size: 0.8125rem;
+}
+
+.storeButton {
+  background: #4a9eff;
+  color: #0a0a0a;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+  text-align: center;
+}
+
+.storeButton:hover {
+  background: #5fb0ff;
+}
+
+.storeButtonDisabled {
+  background: #2d2d2d;
+  color: #666;
+  border: 1px solid #2d2d2d;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.35rem;
+  cursor: not-allowed;
+  text-align: center;
+}
+
+.storeButtonSecondary {
+  background: transparent;
+  color: #4a9eff;
+  border: 1px solid #4a9eff;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.storeButtonSecondary:hover {
+  background: #0c1a2b;
+}
+
+.storeManual {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.storeManualRow {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.storeInput {
+  flex: 1;
+  background: #0f0f0f;
+  border: 1px solid #2d2d2d;
+  border-radius: 0.35rem;
+  color: #e0e0e0;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+}
+
+.storeStatus {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.storeActions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.storeLog {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  max-height: 8rem;
+  overflow-y: auto;
+  padding-top: 0.25rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .terminal {
@@ -446,5 +694,14 @@
   
   .helpCommandName {
     min-width: auto;
+  }
+
+  .storeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .storeManualRow {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
