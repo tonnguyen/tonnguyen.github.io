@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
 
+// Required for static export - API routes are skipped during static generation
+export const dynamic = 'force-static';
+
 const POLAR_BASE_URL = process.env.POLAR_API_BASE || 'https://sandbox-api.polar.sh';
 const POLAR_KEY =
   process.env.POLAR_ACCESS_TOKEN ||
