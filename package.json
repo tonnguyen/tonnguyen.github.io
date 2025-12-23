@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_ENV=development next dev",
-    "build": "NODE_ENV=production next build",
-    "build:static": "NODE_ENV=production next build",
-    "start": "next start",
-    "lint": "next lint",
-    "export": "NODE_ENV=production BUILD_EXPORT=true next build && touch ./out/.nojekyll",
+    "dev": "bunx --bun next dev",
+    "build": "bunx --bun next build",
+    "build:static": "bunx --bun next build",
+    "start": "bunx --bun next start",
+    "lint": "bunx --bun next lint",
+    "export": "NODE_ENV=production BUILD_EXPORT=true bunx --bun next build && touch ./out/.nojekyll",
     "deploy": "gh-pages -d out --nojekyll --repo https://github.com/tonnguyen/tonnguyen.github.io.git"
   },
   "dependencies": {
