@@ -4,17 +4,25 @@ import { NextResponse } from 'next/server';
 export const dynamic = 'force-static';
 
 // CORS headers for cross-origin requests from GitHub Pages
-function corsHeaders() {
+function corsHeaders(origin) {
+  // Use specific origin if provided, otherwise fallback to env var or wildcard
+  const allowedOrigin = origin || process.env.NEXT_PUBLIC_SITE_URL || '*';
+  
   return {
-    'Access-Control-Allow-Origin': process.env.NEXT_PUBLIC_SITE_URL || '*',
+    'Access-Control-Allow-Origin': allowedOrigin,
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    'Access-Control-Max-Age': '86400', // Cache preflight for 24 hours
   };
 }
 
 // Handle OPTIONS requests for CORS preflight
-export async function OPTIONS() {
-  return NextResponse.json({}, { headers: corsHeaders() });
+export async function OPTIONS(req) {
+  const origin = req.headers.get('origin');
+  return new NextResponse(null, {
+    status: 204,
+    headers: corsHeaders(origin),
+  });
 }
 
 const POLAR_BASE_URL = process.env.POLAR_API_BASE || 'https://sandbox-api.polar.sh';
@@ -26,13 +34,15 @@ const POLAR_KEY =
   process.env.POLAR_TOKEN;
 
 export async function GET(req) {
+  const origin = req.headers.get('origin');
+  
   if (!POLAR_KEY) {
     return NextResponse.json(
       {
         error:
           'Missing Polar access token. Set POLAR_ACCESS_TOKEN (or POLAR_SANDBOX_KEY) in .env.local.'
       },
-      { status: 500, headers: corsHeaders() }
+      { status: 500, headers: corsHeaders(origin) }
     );
   }
 
@@ -42,7 +52,7 @@ export async function GET(req) {
   if (!customerSessionToken) {
     return NextResponse.json(
       { error: 'customer_session_token is required' },
-      { status: 400, headers: corsHeaders() }
+      { status: 400, headers: corsHeaders(origin) }
     );
   }
 
@@ -73,7 +83,7 @@ export async function GET(req) {
             {
               checkout: data.checkout || data
             },
-            { status: 200, headers: corsHeaders() }
+            { status: 200, headers: corsHeaders(origin) }
           );
         }
 
@@ -92,12 +102,12 @@ export async function GET(req) {
         details: lastError,
         note: 'Tried multiple endpoints. Customer session token may need to be used differently.'
       },
-      { status: lastResponse?.status || 404, headers: corsHeaders() }
+      { status: lastResponse?.status || 404, headers: corsHeaders(origin) }
     );
   } catch (error) {
     return NextResponse.json(
       { error: `Unable to fetch checkout session: ${error.message}` },
-      { status: 500, headers: corsHeaders() }
+      { status: 500, headers: corsHeaders(origin) }
     );
   }
 }
