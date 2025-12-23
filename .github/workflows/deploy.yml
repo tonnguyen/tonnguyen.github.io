@@ -16,18 +16,17 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v1
       with:
-        node-version: '18'
-        cache: 'yarn'
+        bun-version: latest
 
     - name: Install dependencies
-      run: yarn install
+      run: bun install
 
     - name: Build and export
       run: |
-        yarn export
+        bun run export
         touch ./out/.nojekyll
 
     - name: Deploy to GitHub Pages
