@@ -25,6 +25,21 @@ jobs:
       run: bun install
 
     - name: Build and export
+      env:
+        # Polar API credentials (server-side only, not needed for static export but included for completeness)
+        POLAR_ACCESS_TOKEN: ${{ secrets.POLAR_ACCESS_TOKEN }}
+        POLAR_SANDBOX_KEY: ${{ secrets.POLAR_SANDBOX_KEY }}
+        POLAR_API_BASE: ${{ secrets.POLAR_API_BASE }}
+        # Public environment variables (needed at build time for static export)
+        NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+        NEXT_PUBLIC_POLAR_PRODUCT_AURORA: ${{ secrets.NEXT_PUBLIC_POLAR_PRODUCT_AURORA }}
+        NEXT_PUBLIC_POLAR_PRODUCT_MIDNIGHT: ${{ secrets.NEXT_PUBLIC_POLAR_PRODUCT_MIDNIGHT }}
+        NEXT_PUBLIC_POLAR_PRODUCT_EMBER: ${{ secrets.NEXT_PUBLIC_POLAR_PRODUCT_EMBER }}
+        NEXT_PUBLIC_POLAR_PRODUCT_SUBSCRIPTION_MONTHLY: ${{ secrets.NEXT_PUBLIC_POLAR_PRODUCT_SUBSCRIPTION_MONTHLY }}
+        NEXT_PUBLIC_POLAR_PRODUCT_SUBSCRIPTION_YEARLY: ${{ secrets.NEXT_PUBLIC_POLAR_PRODUCT_SUBSCRIPTION_YEARLY }}
+        # Build configuration
+        NODE_ENV: production
+        BUILD_EXPORT: true
       run: |
         bun run export
         touch ./out/.nojekyll
