@@ -144,8 +144,8 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           {children}
         </ThemeProvider>
-        <script src="https://www.bubblav.com/widget.js" data-site-id="8882b92d-2e8d-48a1-be25-619a76c3c9a6" defer></script>
-        <script src="https://www.bubblav.com/search.js" data-site-id="8882b92d-2e8d-48a1-be25-619a76c3c9a6" data-element-id="bubblav-search" defer></script>
+        <script src="https://www.bubblav.com/widget.js" data-site-id="b5a781a8-5429-46a8-b817-e9c7e043c45f" defer></script>
+        <script src="https://www.bubblav.com/search.js" data-site-id="b5a781a8-5429-46a8-b817-e9c7e043c45f" data-element-id="bubblav-search" defer></script>
       </body>
     </html>
   );
