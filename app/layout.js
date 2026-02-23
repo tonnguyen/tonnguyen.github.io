@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import { ThemeProvider } from '../components/ThemeProvider';
+import BubblaVChatbot from '../components/BubblaVChatbot';
 
 export const metadata = {
   title: 'Ton Nguyen - Team Leader & Developer | Stockholm, Sweden',
@@ -144,7 +145,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           {children}
         </ThemeProvider>
-        <script src="https://www.bubblav.com/widget.js" data-site-id="b5a781a8-5429-46a8-b817-e9c7e043c45f" defer></script>
+        <BubblaVChatbot />
         <script src="https://www.bubblav.com/search.js" data-site-id="b5a781a8-5429-46a8-b817-e9c7e043c45f" data-element-id="bubblav-search" defer></script>
       </body>
     </html>
