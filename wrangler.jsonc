@@ -1,0 +1,22 @@
+{
+  "$schema": "https://unpkg.com/wrangler@4.56.0/config-schema.json",
+  "name": "tonnguyen-github-io",
+  "account_id": "97f75e1ac993d6d5307123ab44d0b40b",
+  "compatibility_date": "2026-10-03",
+  "workers_dev": true,
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "404-page"
+  },
+  // Static-export site: vars below mirror the Vercel prod environment for
+  // parity; nothing consumes them at runtime because there is no Worker script.
+  "vars": {
+    "NEXT_PUBLIC_POLAR_PRODUCT_AURORA": "67232ea2-efae-42a8-b887-13afeb23ebe8",
+    "NEXT_PUBLIC_POLAR_PRODUCT_EMBER": "356334e1-8f42-474d-8770-0f209414247a",
+    "NEXT_PUBLIC_POLAR_PRODUCT_MIDNIGHT": "0f79d6a1-7ff6-4ecd-a63d-2e9f5203861b",
+    "NEXT_PUBLIC_POLAR_PRODUCT_SUBSCRIPTION_MONTHLY": "a30d1a46-97a3-4c21-91de-866ee9368408",
+    "NEXT_PUBLIC_POLAR_PRODUCT_SUBSCRIPTION_YEARLY": "7134feb3-a1ec-47cb-b400-d2bd6659e6ef",
+    "NEXT_PUBLIC_SITE_URL": "https://dev.tonnguyen.com/",
+    "POLAR_API_BASE": "https://sandbox-api.polar.sh"
+  }
+}
