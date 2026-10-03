@@ -1,0 +1,10 @@
+# Non-site files that must not be uploaded as static assets
+.git
+.gitignore
+.wrangler
+.assetsignore
+wrangler.jsonc
+*.env
+.env.*
+.vercel
+node_modules
